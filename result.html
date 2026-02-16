@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light vh-100 d-flex align-items-center">
+    <div class="container text-center">
+        <div class="card shadow p-5 mx-auto" style="max-width: 500px;">
+            <h1 class="display-4">Exam Finished!</h1>
+            <div id="resultContent" class="mt-4">
+                </div>
+            <button class="btn btn-primary mt-4" onclick="location.href='student-dashboard.html'">Back to Dashboard</button>
+        </div>
+    </div>
+    <script>
+        const res = JSON.parse(localStorage.getItem('lastResult'));
+        const percent = (res.score / res.total) * 100;
+        document.getElementById('resultContent').innerHTML = `
+            <h3>${res.examTitle}</h3>
+            <p class="fs-4">Score: <strong>${res.score} / ${res.total}</strong></p>
+            <div class="progress mb-3">
+                <div class="progress-bar" style="width: ${percent}%">${percent}%</div>
+            </div>
+            <p class="text-muted">Submitted on: ${res.date}</p>
+        `;
+    </script>
+</body>
+</html>

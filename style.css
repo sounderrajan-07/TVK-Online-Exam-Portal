@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+}
+
+body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+
+.role-card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.role-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.navbar-brand { font-weight: 800; letter-spacing: -1px; }
+
+.timer-badge {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.question-card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
